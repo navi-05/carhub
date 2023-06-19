@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 
 import { CarCardProps } from "./CarCard"
+import getCarImageUrl from "@/actions/getCarImageUrl";
 
 interface CarDetailsProps {
   car: CarCardProps;
@@ -85,7 +86,7 @@ const CarDetails: React.FC<CarDetailsProps> = ({
 
                   <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                     <Image 
-                      src='/hero.png'
+                      src={getCarImageUrl(car)}
                       fill
                       alt="image"
                       className="object-contain"
@@ -96,7 +97,7 @@ const CarDetails: React.FC<CarDetailsProps> = ({
                   <div className="flex gap-3">
                     <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                       <Image 
-                        src='/hero.png'
+                        src={getCarImageUrl(car, '29')}
                         fill
                         alt="image"
                         className="object-contain"
@@ -105,7 +106,7 @@ const CarDetails: React.FC<CarDetailsProps> = ({
                     </div>
                     <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                       <Image 
-                        src='/hero.png'
+                        src={getCarImageUrl(car, '33')}
                         fill
                         alt="image"
                         className="object-contain"
@@ -114,7 +115,7 @@ const CarDetails: React.FC<CarDetailsProps> = ({
                     </div>
                     <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                       <Image 
-                        src='/hero.png'
+                        src={getCarImageUrl(car, '13')}
                         fill
                         alt="image"
                         className="object-contain"

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { calculateCarRent } from "@/utils";
 import Button from "./Button";
 import CarDetails from "./CarDetails";
+import getCarImageUrl from "@/actions/getCarImageUrl";
 
 export type CarCardProps = {
   city_mpg: number;
@@ -58,7 +59,7 @@ const CarCard = ({ car }: { car: CarCardProps }) => {
 
       <div className="relative w-full h-40 my-3 object-contain">
         <Image 
-          src='/hero.png'
+          src={getCarImageUrl(car)}
           fill
           alt="image"
           className="object-contain"
